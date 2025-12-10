@@ -43,7 +43,7 @@ Admin can manage pizzas, toppings, and view orders from the admin panel.
 
 ## Technology Used
 - Android Studio
-- Java / Kotlin
+- Java 
 - SQLite Database
 - XML Layout Design
 
