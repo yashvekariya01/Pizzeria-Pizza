@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="30dp">
+    <ImageView
+        android:id="@+id/ivSuccessTick"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pay"
+        android:scaleType="centerInside"
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Successful!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your delicious pizza is on its way to your home. Get ready!"
+        android:gravity="center"
+        android:textColor="#757575"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackHome"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Back to Home"
+        app:cornerRadius="15dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#000000"/>
+
+</LinearLayout>

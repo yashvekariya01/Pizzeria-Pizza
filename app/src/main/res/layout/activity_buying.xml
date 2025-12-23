@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/ivPizzaDetail"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/pizza1"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@+id/tvPizzaNameDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza Name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Freshly baked crust topped with premium ingredients and our secret signature sauce."
+            android:textColor="#757575"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Size"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#D32F2F"/>
+
+        <RadioGroup
+            android:id="@+id/rgSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <RadioButton android:id="@+id/rbSmall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Small" android:layout_marginEnd="15dp"/>
+            <RadioButton android:id="@+id/rbMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium" android:checked="true" android:layout_marginEnd="15dp"/>
+            <RadioButton android:id="@+id/rbLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Large"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Extra Toppings ($1.50 each)"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#D32F2F"/>
+
+        <CheckBox android:id="@+id/cbExtraCheese" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Extra Cheese" android:layout_marginTop="8dp"/>
+        <CheckBox android:id="@+id/cbOnion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crispy Onion"/>
+        <CheckBox android:id="@+id/cbMushroom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fresh Mushroom"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginVertical="30dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Amount"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
+                <TextView
+                    android:id="@+id/tvFinalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$12.00"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF5722" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoToPaypal"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_alignParentEnd="true"
+                android:text="Pay with PayPal"
+                android:backgroundTint="#003087"
+                app:icon="@android:drawable/ic_menu_send"
+                app:cornerRadius="15dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
