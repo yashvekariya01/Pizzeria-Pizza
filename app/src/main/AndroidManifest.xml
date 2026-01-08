@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzeria">
         <activity
+            android:name=".item_order"
+            android:exported="false" />
+        <activity
             android:name=".feedback"
             android:exported="false"
             android:theme="@style/Theme.Pizzeria" />
