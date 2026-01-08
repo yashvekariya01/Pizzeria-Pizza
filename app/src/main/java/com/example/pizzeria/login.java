@@ -49,19 +49,32 @@ public class login extends AppCompatActivity {
 
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(pass)) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            } else if (email.equals("admin@pizza.com") && pass.equals("12345")) {
+            }
+
+            // --- ADMIN LOGIN LOGIC ---
+            else if (email.equals("admin@pizza.com") && pass.equals("admin123")) {
+                Toast.makeText(this, "Admin Login: Viewing All Orders 📋", Toast.LENGTH_SHORT).show();
+                // Admin ko seedha Orders list (item_order) par bhej rahe hain
+                Intent intent = new Intent(login.this, item_order.class);
+                startActivity(intent);
+                finish();
+            }
+
+            // --- NORMAL USER LOGIN LOGIC ---
+            // Aap yahan apni database ya static credentials ka check badha sakte hain
+            else if (email.equals("user@pizza.com") && pass.equals("12345")) {
                 Toast.makeText(this, "Welcome to Pizzeria! 🍕", Toast.LENGTH_SHORT).show();
-                // MainActivity par jane ke liye
                 startActivity(new Intent(login.this, MainActivity.class));
                 finish();
-            } else {
+            }
+
+            else {
                 Toast.makeText(this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // 3. ACTUAL REDIRECT TO REGISTRATION (Fix kiya gaya)
+        // 3. Redirect to Registration
         tvRegister.setOnClickListener(v -> {
-            // Ab ye Toast ke saath page bhi badlega
             Toast.makeText(this, "Opening Registration...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(login.this, registration.class);
             startActivity(intent);
