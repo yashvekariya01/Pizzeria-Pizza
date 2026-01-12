@@ -4,145 +4,196 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"> <ScrollView
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8F9FA">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/main_scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        android:paddingTop="48dp"> <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        android:layout_height="match_parent"
+        android:background="#F8F9FA">
 
-        <ImageView
-            android:id="@+id/ivMenuOpen"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_centerVertical="true"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            app:tint="#D32F2F" />
-
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ivMenuOpen"
-            android:layout_marginStart="15dp"
-            android:text="The Pizzeria"
-            android:textColor="#D32F2F"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:fontFamily="serif" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginTop"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:text="Login"
-            android:textColor="#333333"
-            app:icon="@android:drawable/ic_menu_myplaces"
-            app:iconTint="#333333" />
-    </RelativeLayout>
-
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#FFF3E0">
-            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="20dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:paddingTop="40dp"> <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/ivMenuOpen"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                app:tint="#D32F2F" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivMenuOpen"
+                android:layout_marginStart="15dp"
+                android:text="The Pizzeria"
+                android:textColor="#D32F2F"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="serif" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLoginTop"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Login"
+                android:textColor="#333333"
+                app:icon="@android:drawable/ic_menu_myplaces"
+                app:iconTint="#333333" />
+        </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFF3E0">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="20dp">
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Flat 50% OFF"
-                        android:textColor="#E65100"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="On your first order!" android:textColor="#FB8C00" android:textSize="14sp" />
-                </LinearLayout>
-                <ImageView android:layout_width="80dp" android:layout_height="80dp"
-                    android:layout_alignParentEnd="true" android:layout_centerVertical="true"
-                    android:src="@android:drawable/star_big_on" app:tint="#FFCC80" />
-            </RelativeLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Popular Pizzas"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="#212121"/>
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:alignmentMode="alignMargins">
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_columnWeight="1" android:layout_margin="8dp" app:cardCornerRadius="15dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
-                    <ImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/pizza6" android:background="#F0F0F0" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cheese Lover" android:textStyle="bold" android:layout_marginTop="8dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$12.00" android:textColor="#FF5722" android:textStyle="bold"/>
-                </LinearLayout>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flat 50% OFF"
+                            android:textColor="#E65100"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="On your first order!"
+                            android:textColor="#FB8C00"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/star_big_on"
+                        app:tint="#FFCC80" />
+                </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_columnWeight="1" android:layout_margin="8dp" app:cardCornerRadius="15dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
-                    <ImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/pizza1" android:background="#F0F0F0" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Veggie Farm" android:textStyle="bold" android:layout_marginTop="8dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$10.00" android:textColor="#FF5722" android:textStyle="bold"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </GridLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular Pizzas"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#212121"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnOffers"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:text="View Current Offers"
-            android:backgroundTint="#FB8C00"
-            app:cornerRadius="15dp" />
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAboutUs"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:text="About Us &amp; Help"
-            android:textColor="#D32F2F"
-            app:strokeColor="#D32F2F"
-            app:cornerRadius="15dp" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="15dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/pizza6"
+                            android:scaleType="centerCrop" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cheese Lover"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$12.00"
+                            android:textColor="#FF5722"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
-</ScrollView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="15dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/pizza1"
+                            android:scaleType="centerCrop" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Veggie Farm"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$10.00"
+                            android:textColor="#FF5722"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOffers"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:text="View Current Offers"
+                android:backgroundTint="#FB8C00"
+                app:cornerRadius="15dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAboutUs"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="About Us &amp; Help"
+                android:textColor="#D32F2F"
+                app:strokeColor="#D32F2F"
+                app:cornerRadius="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -158,34 +209,58 @@
             android:padding="20dp">
 
             <ImageView
-                android:layout_width="80dp" android:layout_height="80dp"
-                android:src="@drawable/logo4" android:layout_marginTop="30dp" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo4"
+                android:layout_marginTop="30dp" />
 
             <TextView
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Welcome Foodie!" android:textSize="20sp"
-                android:textStyle="bold" android:layout_marginTop="10dp" android:textColor="#333333"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Foodie!"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="#333333"/>
 
-            <View android:layout_width="match_parent" android:layout_height="1dp"
-                android:background="#EEEEEE" android:layout_marginVertical="20dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE"
+                android:layout_marginVertical="20dp"/>
 
             <TextView
                 android:id="@+id/menuHome"
-                android:layout_width="match_parent" android:layout_height="50dp"
-                android:text="🏠  Home" android:gravity="center_vertical" android:textSize="18sp"
-                android:textColor="#333333" android:clickable="true" android:focusable="true"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="🏠  Home"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
                 android:id="@+id/menuFeedback"
-                android:layout_width="match_parent" android:layout_height="50dp"
-                android:text="⭐  Feedback" android:gravity="center_vertical" android:textSize="18sp"
-                android:textColor="#333333" android:clickable="true" android:focusable="true"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="⭐  Feedback"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
                 android:id="@+id/menuAbout"
-                android:layout_width="match_parent" android:layout_height="50dp"
-                android:text="ℹ️  About Us" android:gravity="center_vertical" android:textSize="18sp"
-                android:textColor="#333333" android:clickable="true" android:focusable="true"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="ℹ️  About Us"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:clickable="true"
+                android:focusable="true"/>
 
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
