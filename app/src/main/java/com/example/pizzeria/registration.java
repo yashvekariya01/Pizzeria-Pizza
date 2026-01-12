@@ -1,6 +1,7 @@
 package com.example.pizzeria;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
@@ -37,14 +38,18 @@ public class registration extends AppCompatActivity {
                     TextUtils.isEmpty(phone) || TextUtils.isEmpty(pass)) {
                 Toast.makeText(this, "Please fill all details!", Toast.LENGTH_SHORT).show();
             } else {
+                // User credentials save karna login ke liye
+                SharedPreferences sp = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString(email, pass);
+                editor.putString(email + "_name", name);
+                editor.apply();
+
                 Toast.makeText(this, "Registration Successful!", Toast.LENGTH_LONG).show();
-                // Direct Login page pe bhej do
                 finish();
             }
         });
 
-        tvBackToLogin.setOnClickListener(v -> {
-            finish(); // Current page close karke vapas purane page (Login) pe chala jayega
-        });
+        tvBackToLogin.setOnClickListener(v -> finish());
     }
 }
