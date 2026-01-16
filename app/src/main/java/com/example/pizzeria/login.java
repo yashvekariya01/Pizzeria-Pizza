@@ -34,7 +34,7 @@ public class login extends AppCompatActivity {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             }
             // 1. ADMIN LOGIN
-            else if (email.equals("admin@pizza.com") && pass.equals("admin123")) {
+            else if (email.equals("admin@gmail.com") && pass.equals("admin@123")) {
                 // Admin session start (Optional but good practice)
                 setLoginSession(true, "admin");
                 startActivity(new Intent(login.this, item_order.class));

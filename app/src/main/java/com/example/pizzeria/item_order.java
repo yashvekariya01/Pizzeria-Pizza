@@ -3,10 +3,9 @@ package com.example.pizzeria;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ListView; // ListView import kiya
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -17,7 +16,7 @@ import java.util.Collections;
 
 public class item_order extends AppCompatActivity {
 
-    RecyclerView rvOrders;
+    ListView lvOrders; // ListView variable
     OrderAdapter adapter;
     ArrayList<Order> orderList;
     Button btnClearOrders;
@@ -28,26 +27,23 @@ public class item_order extends AppCompatActivity {
         setContentView(R.layout.activity_item_order);
 
         // Connect views
-        rvOrders = findViewById(R.id.rvOrdersList);
+        lvOrders = findViewById(R.id.lvOrdersList);
         btnClearOrders = findViewById(R.id.btnClearOrders);
-
-        rvOrders.setLayoutManager(new LinearLayoutManager(this));
 
         // Load data
         loadDataFromSharedPreferences();
 
         // Set adapter
         if (orderList != null) {
-            Collections.reverse(orderList); // latest order first
-            adapter = new OrderAdapter(orderList);
-            rvOrders.setAdapter(adapter);
+            Collections.reverse(orderList); // latest order top par dikhane ke liye
+            adapter = new OrderAdapter(this, orderList); // Context (this) pass kiya
+            lvOrders.setAdapter(adapter);
         }
 
-        // Remove All Orders Button
+        // Clear All Button Click
         btnClearOrders.setOnClickListener(v -> clearAllOrders());
     }
 
-    // Load orders from SharedPreferences
     private void loadDataFromSharedPreferences() {
         SharedPreferences sp = getSharedPreferences("PizzeriaPrefs", MODE_PRIVATE);
         Gson gson = new Gson();
@@ -62,7 +58,6 @@ public class item_order extends AppCompatActivity {
         }
     }
 
-    // Clear all orders
     private void clearAllOrders() {
         SharedPreferences sp = getSharedPreferences("PizzeriaPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -70,6 +65,6 @@ public class item_order extends AppCompatActivity {
         editor.apply();
 
         orderList.clear();
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged(); // List ko update karne ke liye
     }
 }

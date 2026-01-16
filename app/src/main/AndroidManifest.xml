@@ -11,43 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzeria">
+
         <activity
-            android:name=".item_order"
-            android:exported="false" />
-        <activity
-            android:name=".feedback"
-            android:exported="false"
-            android:theme="@style/Theme.Pizzeria" />
-        <activity
-            android:name=".about_us"
-            android:exported="false" />
-        <activity
-            android:name=".success"
-            android:exported="false" />
-        <activity
-            android:name=".paypal"
-            android:exported="false" />
-        <activity
-            android:name=".buying"
-            android:exported="false" />
-        <activity
-            android:name=".offers"
-            android:exported="false" />
-        <activity
-            android:name=".registration"
-            android:exported="false" />
-        <activity
-            android:name=".login"
-            android:exported="false" />
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".item_order" android:exported="false" />
+        <activity android:name=".feedback" android:exported="false" android:theme="@style/Theme.Pizzeria" />
+        <activity android:name=".about_us" android:exported="false" />
+        <activity android:name=".success" android:exported="false" />
+        <activity android:name=".paypal" android:exported="false" />
+        <activity android:name=".buying" android:exported="false" />
+        <activity android:name=".offers" android:exported="false" />
+        <activity android:name=".registration" android:exported="false" />
+        <activity android:name=".login" android:exported="false" />
+
     </application>
-
 </manifest>

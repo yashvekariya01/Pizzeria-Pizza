@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:background="#F0F2F5">
 
-    <!-- Header Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,10 +36,8 @@
                 android:textSize="14sp"
                 android:layout_marginTop="4dp" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
-    <!-- Remove All Orders Button -->
     <Button
         android:id="@+id/btnClearOrders"
         android:layout_width="match_parent"
@@ -52,11 +49,12 @@
         android:textStyle="bold"
         android:backgroundTint="#D32F2F" />
 
-    <!-- Orders List -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvOrdersList"
+    <ListView
+        android:id="@+id/lvOrdersList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
         android:padding="12dp"
         android:clipToPadding="false" />
 

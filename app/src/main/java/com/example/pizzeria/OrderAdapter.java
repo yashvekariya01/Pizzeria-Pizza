@@ -1,53 +1,58 @@
 package com.example.pizzeria;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
+public class OrderAdapter extends BaseAdapter {
 
+    private Context context;
     private ArrayList<Order> orderList;
 
-    // Constructor: Jo list hum pass karenge use yahan set karega
-    public OrderAdapter(ArrayList<Order> orderList) {
+    public OrderAdapter(Context context, ArrayList<Order> orderList) {
+        this.context = context;
         this.orderList = orderList;
     }
 
-    @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Yahan aapka banaya hua row_order design load hoga
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_order, parent, false);
-        return new OrderViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-        // Ek-ek karke data set karega
-        Order currentOrder = orderList.get(position);
-        holder.name.setText(currentOrder.getName());
-        holder.table.setText("Table No: " + currentOrder.getTable());
-        holder.time.setText(currentOrder.getTime());
-    }
-
-    @Override
-    public int getItemCount() {
+    public int getCount() {
         return orderList.size();
     }
 
-    // Design ke elements ko identify karne ke liye
-    public static class OrderViewHolder extends RecyclerView.ViewHolder {
-        TextView name, table, time;
+    @Override
+    public Object getItem(int position) {
+        return orderList.get(position);
+    }
 
-        public OrderViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.tvOrderName);
-            table = itemView.findViewById(R.id.tvOrderTable);
-            time = itemView.findViewById(R.id.tvOrderTime);
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // Row layout ko inflate karna
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.row_order, parent, false);
         }
+
+        // Data nikalna list se
+        Order currentOrder = orderList.get(position);
+
+        // Views ko find karna
+        TextView name = convertView.findViewById(R.id.tvOrderName);
+        TextView table = convertView.findViewById(R.id.tvOrderTable);
+        TextView time = convertView.findViewById(R.id.tvOrderTime);
+
+        // Data set karna
+        name.setText(currentOrder.getName());
+        table.setText("Table No: " + currentOrder.getTable());
+        time.setText(currentOrder.getTime());
+
+        return convertView;
     }
 }
